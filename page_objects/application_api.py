@@ -16,7 +16,6 @@ class ApiReqRes:
         response = self.context.get(
             url=self.base_url + f"users?page={page}"
         )
-        print(response)
         result_body = json.loads(response.body())
         result_status_code = response.status
         return result_body, result_status_code
@@ -25,7 +24,6 @@ class ApiReqRes:
         response = self.context.get(
             url=self.base_url + f"users?page={page}"
         )
-        print(response)
         result_body = response.body()
         result_status_code = response.status
         return result_body, result_status_code
@@ -34,7 +32,6 @@ class ApiReqRes:
         response = self.context.get(
             url=self.base_url + f"users?delay={delay}"
         )
-        print(response)
         result_body = json.loads(response.body())
         result_status_code = response.status
         return result_body, result_status_code
