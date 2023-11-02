@@ -49,7 +49,5 @@ class TestAPIandUIResponsesMatches:
         reqres_ui.goto("/")
         reqres_ui.choose_endpoint("//li[@data-id='users']")
         ui_body, ui_status = reqres_ui.try_example("/api/users?page=2")
-        print(ui_body, ui_status)
         api_body, api_status = reqres_api.get_list_users_for_match(2)
-        print(api_body, api_status)
         reqres_ui.assert_responses_matches(ui_body, ui_status, api_body, api_status)

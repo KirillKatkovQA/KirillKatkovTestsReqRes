@@ -7,7 +7,6 @@ class TestUsers:
                                                          (2, expected_responses.list_users_response[1])])
     def test_list_users_correct_response(self, reqres_api, page, expected_response):
         result, status_code = reqres_api.get_list_users(page)
-        print(result, status_code)
         reqres_api.assert_correct_response(result, status_code, expected_response)
 
     @pytest.mark.parametrize("user_id, expected_response", [(1, expected_responses.single_user_response[0]),

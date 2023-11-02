@@ -16,11 +16,9 @@ class TestResourses:
                                                                ])
     def test_single_resourse_found(self, reqres_api, resouse_id, expected_response):
         result, status_code = reqres_api.get_single_resourse(resouse_id)
-        print(result, status_code)
         reqres_api.assert_correct_response(result, status_code, expected_response)
 
     @pytest.mark.parametrize("resouse_id", (23, 0, 99))
     def test_single_resourse_not_found(self, reqres_api, resouse_id):
         result, status_code = reqres_api.get_single_resourse(resouse_id)
-        print(result, status_code)
         reqres_api.assert_not_found(result, status_code, expected_response={})
